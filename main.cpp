@@ -16,6 +16,10 @@ int main() {
 	sf::RenderWindow window;
 	createWindow(window);
 
+	sf::Image icon;
+	if (!icon.loadFromMemory(&icon_png, icon_png_len)) return EXIT_FAILURE;
+	window.setIcon(32, 32, icon.getPixelsPtr());
+
 	startGame(window);
 
 	return EXIT_SUCCESS;
@@ -47,7 +51,7 @@ void startGame(sf::RenderWindow& window) {
 	int height = 5;
 
 	sf::Font font;
-	if (!font.loadFromFile("resources/sansation.ttf")) window.close();
+	if (!font.loadFromMemory(sansation_ttf, sansation_ttf_len)) window.close();
 	sf::Text pauseMessage = createPauseMessage(font, height);
 
 	sf::Clock clock;

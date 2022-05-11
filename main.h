@@ -7,6 +7,8 @@
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
+#include "Sansation_font.h"
+#include "Icon.h"
 
 using namespace std;
 
